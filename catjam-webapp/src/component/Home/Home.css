@@ -1,0 +1,58 @@
+.name{
+    font-size: 19px;
+}
+
+.carousel {
+    margin-top: 109px;
+    height: 500px;
+    width: '100%';
+}
+
+.item {
+    position: relative;
+    height: 500px;
+    width: "100%";
+    overflow: visible;
+    display: flex;
+    flex-direction: row;
+    background-color: #337775;
+}
+
+.item-image {
+    position: relative;
+    width: auto ;
+    object-fit: contain;
+    margin: 0;
+}
+
+.item-content {
+    position: relative;
+    width: auto;
+    height: 500px;
+    align-items: center;
+    margin: 0;
+    display: flex;
+    flex:1;
+}
+
+.item-content-container {
+    position: relative;
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.item-text-title {
+    margin-bottom: 30px;
+    font-size: 46px;
+    font-weight: 800;
+    color: white;
+    text-align: center;
+}
+
+.item-text-desc {
+    font-size: 18px;
+    font-weight: 500;
+    text-align: center;
+}
