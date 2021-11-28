@@ -88,8 +88,9 @@ public class TaskServiceImpl implements TaskService {
 	}
 
 	@Override
-	public boolean updateAssignedTo(Long id, String task) {
-		taskRepo.updateTask(id, task);
+	public boolean updateAssignedTo(Long id, String user) {
+		taskRepo.updateAssignedTo(id, user);
+		taskRepo.updateStatus(id, "In progress");
 		return true;
 	}
 

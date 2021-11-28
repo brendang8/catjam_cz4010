@@ -36,6 +36,10 @@ class TaskApi {
         return axios.delete(TASK_API_URL + '/' + taskId);
     }
 
+    updateAssignedTo(taskId, user){
+        return axios.put(TASK_API_URL + '/' + taskId + '/updateAssignedTo/' + user);
+    }
+
     addTask(task) {
         return axios.post(TASK_API_URL + '/add' , task);
     }

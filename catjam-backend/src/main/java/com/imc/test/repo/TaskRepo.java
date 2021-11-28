@@ -13,8 +13,13 @@ public interface TaskRepo extends Neo4jRepository<Task, Long>{
 	@Query("MATCH (t:Task) WHERE t.postedBy={username} RETURN t")
 	List<Task> findAssignedTasks(@Param("username") String username);
 	
-	@Query("MATCH (t:Task) WHERE t.taskId={id}"
-			+ "SET t.assignedTo = {user}"
+	@Query("MATCH (t:Task) WHERE t.taskId=$id "
+			+ "SET t.assignedTo = $username "
 			+ "RETURN t")
-	Boolean updateTask(@Param("id") Long id, @Param("user") String task);
+	Task updateAssignedTo(@Param("id") Long id, @Param("username") String username);
+	
+	@Query("MATCH (t:Task) WHERE t.taskId=$id "
+			+ "SET t.status = $status "
+			+ "RETURN t")
+	Task updateStatus(@Param("id") Long id, @Param("status") String status);
 }

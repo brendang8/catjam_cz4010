@@ -27,7 +27,7 @@ public class ResourceServerConfig extends ResourceServerConfigurerAdapter {
                 .csrf().disable()
                 .authorizeRequests()
                 .antMatchers(HttpMethod.OPTIONS, "/oauth/token").permitAll()
-                .antMatchers("/", "/api/account/add","/api/contact/add", "/api/task/{taskId}", "/api/user/add", "/api/user/{userId}", "/api/relatedto/add", "/api/relatedto/{relatedToId}", "/api/quote/add", "/api/quote/{quoteId}").permitAll()
+                .antMatchers("/", "/api/task/{taskId}",  "/api/task/{taskId}/updateAssignedTo/{user}", "/api/user/add", "/api/user/{userId}").permitAll()
                 .antMatchers("/private/**", "/api/**", "/POC/**").authenticated();
     }
 

@@ -68,7 +68,7 @@ public class SecurityConfigurer extends WebSecurityConfigurerAdapter {
         .authorizeRequests()
         .antMatchers(HttpMethod.OPTIONS, "/oauth/token").permitAll()
         //.antMatchers("/oauth/token").authenticated()
-        .antMatchers("/api/task/{taskId}", "/api/user/add", "/api/user/{userId}").permitAll().anyRequest().authenticated()
+        .antMatchers("/api/task/{taskId}","/api/task/{taskId}/updateAssignedTo/{user}", "/api/user/add", "/api/user/{userId}").permitAll().anyRequest().authenticated()
         .and()
         .formLogin().permitAll().and()
         .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);

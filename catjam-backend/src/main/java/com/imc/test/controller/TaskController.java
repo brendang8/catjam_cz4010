@@ -68,8 +68,8 @@ public class TaskController {
 		return taskList;
 	}
 	
-	@PutMapping("/{id}/updateAssignedTo")
-	public String updateAssignedTo(@PathVariable Long id, @RequestParam String user) {
+	@PutMapping("/{id}/updateAssignedTo/{user}")
+	public String updateAssignedTo(@PathVariable Long id, @PathVariable String user) {
 		boolean updated = taskService.updateAssignedTo(id, user);
 		if (updated == true) {
 			return "Task " + id + " updated";

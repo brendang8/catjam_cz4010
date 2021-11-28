@@ -145,9 +145,9 @@ class CreateBounty extends Component {
             description: this.state.description,
             deliveryDays: this.state.deliveryDays,
             price: this.state.price,
-            postedBy: localStorage.getItem("user")
+            postedBy: localStorage.getItem("user"),
+            status: 'New'
         };
-        console.log(task)
         TaskApi.addTask(task).then(function (response) {
             if (response.status == 200)
             {

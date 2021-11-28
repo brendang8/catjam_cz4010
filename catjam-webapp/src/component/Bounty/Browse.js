@@ -25,6 +25,7 @@ class Browse extends Component {
                 {this.state.tasks.map(task => 
                     <BountyComponent 
                         button="Accept"
+                        taskId={task.taskId}
                         title={task.title}
                         description={task.description}
                         category={task.category}

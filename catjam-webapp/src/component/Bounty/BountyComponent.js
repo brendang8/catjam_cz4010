@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
 import { Paper, Typography, Button, TextField, Chip} from '@material-ui/core'
+import TaskApi from "../../Service/TaskApi"
+import history from '../router/history';
 
 class BountyComponent extends Component {
     constructor(props) {
         super(props);
         this.state = {
-
+            accepted: false
         }
         this.root = {
             width: 400,
@@ -29,6 +31,16 @@ class BountyComponent extends Component {
             marginBottom: '20px',
             margin: 20
         }
+    }
+
+    handleAccept = () => {
+        const user = localStorage.getItem("user");
+        TaskApi.updateAssignedTo(this.props.taskId, user).then(function (response) {
+            if (response.status == 200)
+            {
+                alert("Bounty Accepted");
+            }
+        });
     }
 
     render() {
@@ -97,7 +109,7 @@ class BountyComponent extends Component {
                         />
                     </div>
                     {user != this.props.postedBy ? (
-                        <Button color="primary" variant="contained" style={{marginBottom: '20px'}}>Accept</Button>
+                        <Button color="primary" variant="contained" style={{marginBottom: '20px'}} onClick={this.handleAccept}>Accept</Button>
                         )
                         :
                         <div/>

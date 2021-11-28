@@ -17,8 +17,9 @@ public class Task {
 	private double price;
 	private String assignedTo;
 	private String postedBy;
+	private String status;
 	
-	public Task(Long taskId, String title, String description, int deliveryDays, double price, String postedBy) {
+	public Task(Long taskId, String title, String description, int deliveryDays, double price, String postedBy, String status) {
 		super();
 		this.taskId = taskId;
 		this.title = title;
@@ -68,5 +69,11 @@ public class Task {
 	}
 	public void setPostedBy(String postedBy) {
 		this.postedBy = postedBy;
+	}
+	public String getStatus() {
+		return status;
+	}
+	public void setStatus(String status) {
+		this.status = status;
 	}
 }

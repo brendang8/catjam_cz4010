@@ -1,6 +1,6 @@
 import React, { Component, useEffect } from 'react';
 import TaskApi from "../../Service/TaskApi"
-import BountyComponent from './BountyComponent';
+import AcceptedBountyComponent from './AcceptedBountyComponent';
 
 class Accepted extends Component {
     constructor(props) {
@@ -23,7 +23,8 @@ class Accepted extends Component {
         return (
             <div>
                 {this.state.tasks.map(task => 
-                    <BountyComponent 
+                    <AcceptedBountyComponent 
+                        taskId={task.taskId}
                         title={task.title}
                         description={task.description}
                         category={task.category}
