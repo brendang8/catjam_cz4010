@@ -47,7 +47,8 @@ The project was built with the following softwares
 
 ### Prerequisites
 
-This is an example of how to list things you need to use the software and how to install them.
+Npm is required to run the frontend React JS application. Start a terminal and run the follow code to install npm.
+
 * npm
   ```sh
   npm install npm@latest -g
