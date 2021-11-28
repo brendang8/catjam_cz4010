@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Paper, Typography, Button, TextField, Chip} from '@material-ui/core'
 
-class BountyComponent extends Component {
+class AcceptedBountyComponent extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -96,15 +96,10 @@ class BountyComponent extends Component {
                             }}
                         />
                     </div>
-                    {user != this.props.postedBy ? (
-                        <Button color="primary" variant="contained" style={{marginBottom: '20px'}}>Accept</Button>
-                        )
-                        :
-                        <div/>
-                    }   
+                    <Button color="primary" variant="contained" style={{marginBottom: '20px'}}>Upload File</Button> 
                 </Paper>
             </div>
         )
     }
 }
-export default BountyComponent
+export default AcceptedBountyComponent

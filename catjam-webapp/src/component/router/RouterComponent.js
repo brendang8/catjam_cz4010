@@ -15,8 +15,9 @@ import history from './history';
 import Home from '../Home/Home';
 import CreateBounty from '../Bounty/CreateBounty'
 import Browse from '../Bounty/Browse'
+import Accepted from '../Bounty/Accepted'
 
-const menu = ['Home', 'Graphics & Design', 'Writing & Translation', 'Music & Audio', 'Video & Animation'];
+const menu = ['Home', 'Browse Bounties', 'Accepted Bounties'];
 
 const AppRouter = () => {
     const classes = style();
@@ -98,7 +99,8 @@ const AppRouter = () => {
 
                         <Switch>
                             <Route path={'/Home/Home'} component={Home}/>
-                            <Route path={'/Home/Graphics & Design'} component={Browse}/>
+                            <Route path={'/Home/Browse Bounties'} component={Browse}/>
+                            <Route path={'/Home/Accepted Bounties'} component={Accepted}/>
                             <Route path={'/Home/CreateBounty'} component={CreateBounty}/>
                         </Switch>
 

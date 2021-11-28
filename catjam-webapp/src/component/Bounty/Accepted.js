@@ -2,7 +2,7 @@ import React, { Component, useEffect } from 'react';
 import TaskApi from "../../Service/TaskApi"
 import BountyComponent from './BountyComponent';
 
-class Browse extends Component {
+class Accepted extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -24,7 +24,6 @@ class Browse extends Component {
             <div>
                 {this.state.tasks.map(task => 
                     <BountyComponent 
-                        button="Accept"
                         title={task.title}
                         description={task.description}
                         category={task.category}
@@ -38,4 +37,4 @@ class Browse extends Component {
     }
 }
 
-export default Browse
+export default Accepted
