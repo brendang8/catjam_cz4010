@@ -25,6 +25,10 @@ The benefits of using JWT together with OAuth include:
 * Can be validated without connecting to the Authorization Server on every API call.
 * Has expiration date to determine user access
 
+## Development Idea
+
+Creating a full stack application with an online database such as Firebase would have made it easier, however, because Firebase is able to do everything, we are not able to show the cryptographic tools. Thus, we have chosen to stick to the standard architecture of using a local database, frontend and backend.
+
 ### Built With
 
 The project was built with the following softwares
