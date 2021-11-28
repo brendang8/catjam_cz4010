@@ -7,8 +7,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.imc.test.model.Invoice;
-import com.imc.test.model.Task;
-import com.imc.test.service.AccountService;
 import com.imc.test.service.InvoiceService;
 
 @RestController
@@ -16,15 +14,4 @@ import com.imc.test.service.InvoiceService;
 public class InvoiceController {
 
 
-	@Autowired
-	private InvoiceService invoiceService;
-	
-	@PostMapping("/add")
-	public String addInvoice(@RequestBody Invoice invoice) {
-		if (invoiceService.saveInvoice(invoice)) {
-			return "Invoice ID exists";
-		}
-		else
-			return invoice.getInvoiceId() + " Invoice added";
-	}
 }
