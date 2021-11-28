@@ -25,4 +25,6 @@ public interface TaskService {
 
 	public Task uploadFile(Long id);
 
+	public boolean updateAssignedTo(Long id, String user);
+
 }

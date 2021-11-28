@@ -8,6 +8,14 @@ import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 
+import org.neo4j.driver.AuthTokens;
+import org.neo4j.driver.Driver;
+import org.neo4j.driver.GraphDatabase;
+import org.neo4j.driver.Result;
+import org.neo4j.driver.Session;
+import org.neo4j.driver.Transaction;
+import org.neo4j.driver.TransactionWork;
+import org.neo4j.driver.exceptions.NoSuchRecordException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -19,6 +27,7 @@ import com.imc.test.service.TaskService;
 
 @Service
 public class TaskServiceImpl implements TaskService {
+	
 	@Autowired
 	private TaskRepo taskRepo;
 	@Autowired
@@ -69,14 +78,19 @@ public class TaskServiceImpl implements TaskService {
 
 	@Override
 	public List<Task> getAssignedTasks(String user) {
-		// TODO Auto-generated method stub
-		return null;
+		return taskRepo.findAssignedTasks(user);
 	}
 
 	@Override
 	public Task uploadFile(Long id) {
 		// TODO Auto-generated method stub
 		return null;
+	}
+
+	@Override
+	public boolean updateAssignedTo(Long id, String task) {
+		taskRepo.updateTask(id, task);
+		return true;
 	}
 
 
