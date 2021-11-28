@@ -25,6 +25,19 @@ The benefits of using JWT together with OAuth include:
 * Can be validated without connecting to the Authorization Server on every API call.
 * Has expiration date to determine user access
 
+## Spring Security Architecture
+
+* Spring Security Filter Chain
+* Authentication Manager
+* Authentication Provider
+* UserDetailsService
+
+
+The Filter Chain in this case is a JWT filter, it checks if the user is already authenticated in the current session. 
+The Authentication Manager is a coordinator that is able to register multiple providers. It delivers a authentication request to the right provider.
+The Authentication Provider performs authentication with the request.
+The UserDetailsService is a service that loads user data from UserDetails where important user data is stored.
+
 ## Development Idea
 
 Creating a full stack application with an online database such as Firebase would have made it easier, however, because Firebase is able to do everything, we are not able to show the cryptographic tools. Thus, we have chosen to stick to the standard architecture of using a local database, frontend and backend.
