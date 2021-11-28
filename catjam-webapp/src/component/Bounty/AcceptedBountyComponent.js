@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
 import { Paper, Typography, Button, TextField, Chip} from '@material-ui/core'
+import UploadApi from '../../Service/UploadApi';
 
 class AcceptedBountyComponent extends Component {
     constructor(props) {
         super(props);
         this.state = {
-
+            file: null
         }
         this.root = {
             width: 400,
@@ -29,6 +30,16 @@ class AcceptedBountyComponent extends Component {
             marginBottom: '20px',
             margin: 20
         }
+    }
+
+    handleFileSelect = (e) => {
+        this.setState({file: e.target.files[0]})
+    }
+
+    fileUpload = () => {
+        const fd = new FormData();
+        fd.append('image', this.state.file, this.state.file.name);
+        UploadApi.upload(fd);
     }
 
     render() {
@@ -96,7 +107,8 @@ class AcceptedBountyComponent extends Component {
                             }}
                         />
                     </div>
-                    <Button color="primary" variant="contained" style={{marginBottom: '20px'}}>Upload File</Button> 
+                    <input type="file" onChange={this.handleFileSelect}/>
+                    <Button onClick={this.fileUpload} color="primary" variant="contained" style={{marginBottom: '20px'}}>Upload File</Button> 
                 </Paper>
             </div>
         )
