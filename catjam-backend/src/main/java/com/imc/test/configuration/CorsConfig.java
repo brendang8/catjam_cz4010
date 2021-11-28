@@ -38,7 +38,7 @@ public class CorsConfig {
 				registry.addMapping("/**")
 				.allowedMethods("GET","POST", "PUT", "DELETE")
 				.allowedHeaders("*")
-				.allowedOrigins("http://localhost:3000","https://imcpocui.azurewebsites.net");
+				.allowedOrigins("http://localhost:3000");
 			}
 		};
 	}
