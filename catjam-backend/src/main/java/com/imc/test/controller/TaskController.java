@@ -33,6 +33,11 @@ public class TaskController {
 			return Task.getTaskId() + " Task added";
 	}
 	
+	@PostMapping("/{id}/upload")
+	public Task uploadFile(@PathVariable Long id) {
+		return taskService.uploadFile(id);
+	}
+	
 	@GetMapping("/{id}")
 	public Task getTaskById(@PathVariable Long id) {
 		return taskService.getTaskById(id);
@@ -42,6 +47,17 @@ public class TaskController {
 	@GetMapping("/getAllTasks")
 	public List<Task> getAllTasks(){
 		List<Task> taskList = taskService.getAllTasks();
+		for (Task task : taskList)
+		{
+			Map<String, Object> map = taskService.toMap(task);
+			//System.out.println(Arrays.asList(map));
+		}
+		return taskList;
+	}
+	
+	@GetMapping("/{user}/getAssignedTasks")
+	public List<Task> getAssignedTasks(@PathVariable String user){
+		List<Task> taskList = taskService.getAssignedTasks(user);
 		for (Task task : taskList)
 		{
 			Map<String, Object> map = taskService.toMap(task);

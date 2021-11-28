@@ -21,4 +21,8 @@ public interface TaskService {
 
 	public boolean deleteAllTask();
 
+	public List<Task> getAssignedTasks(String user);
+
+	public Task uploadFile(Long id);
+
 }

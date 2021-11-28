@@ -67,6 +67,18 @@ public class TaskServiceImpl implements TaskService {
 		return true;
 	}
 
+	@Override
+	public List<Task> getAssignedTasks(String user) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Task uploadFile(Long id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 
 	
 }
